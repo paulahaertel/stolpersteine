@@ -7,10 +7,14 @@
 	
 	<!-- Styles -->
 
-	<!-- Smoothness of tiles -->
+	<!-- Smoothness of tiles and maps stuff-->
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.14/themes/css/cartodb.css">
 
+	<!-- D3 Styles -->
+	<link rel="stylesheet" href="styles/d3.slider.css" /> 
+
+	<!-- Own Styles -->
 	<link rel="stylesheet" href="styles/style.css">
 
 
@@ -23,6 +27,7 @@
 			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. </p>
 			</div>
 			<div id="stats">
+				<h3>Statistics</h3>
 				<p>
 					1945<br>
 					6.000.000<br>
@@ -30,7 +35,17 @@
 				</p>
 			</div>
 			<div id="interactive">
-				<p>Timeline! Or similar stuff...</p>
+				<h3>Interact</h3>
+				<p>Filter by Deportation Date:</p>
+				
+    			<div id="slider6"></div>
+
+				<p>Toggle Layers:</p>
+				<form action="">
+						<input type="checkbox" checked="true" id="layer1">Stumbling Blocks<br>
+						<input type="checkbox" checked="true" id="layer0">Districts
+				</form>
+
 			</div>
 		</div>
 	</div>
@@ -42,5 +57,6 @@
 
 	<script src="http://libs.cartocdn.com/cartodb.js/v3/3.14/cartodb.js"></script>
 	<script src="scripts/script.js"></script>
+	<script src="scripts/d3.slider.js"></script>
 </body>
 </html>

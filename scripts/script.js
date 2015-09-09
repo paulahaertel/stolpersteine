@@ -31,22 +31,48 @@ var onReady = function() {
       }]
     };
 
-    var sublayers;
+    var sublayers = [];
 
     //create layer
 	cartodb.createLayer(map_object, layerSource)
 	.addTo(map_object)
 	.done(function(layer) {
 		// sublayers = layer;
-  //       for (var i = 0; i < layer.getSubLayerCount(); i++) {
-  //           sublayers[i] = layer.getSubLayer(i);
-  //           alert("Congrats, you added sublayer #" + i + "!");
-  //       }
+        for (var i = 0; i < layer.getSubLayerCount(); i++) {
+            sublayers[i] = layer.getSubLayer(i);
+            // alert("Congrats, you added sublayer #" + i + "!");
+        }
 	})
 	.error(function(err) {
 		console.log("error: " + err)
 	});
 
+    // If a user clicks the DOM element with an id of sublayer0, 
+    // CartoDB.js will hide or show sublayers[0] depending on its state 
+    var sublayer0Shown = true;
+    $("#layer0").on('click', function() {
+        if (sublayer0Shown) {
+            sublayers[0].hide();
+        } else {
+            sublayers[0].show();
+        }
+        sublayer0Shown = !sublayer0Shown; 
+    });
+
+    var sublayer1Shown = true;
+    $("#layer1").on('click', function() {
+        if (sublayer1Shown) {
+            sublayers[1].hide();
+        } else {
+            sublayers[1].show();
+        }
+        sublayer1Shown = !sublayer1Shown; 
+    });
+
+    d3.select("body").append("p").text("Slider!");
+    d3.select('#slider6').call(d3.slider().axis(true).min(2000).max(2100).step(5));
+
+    
 };
 
 
