@@ -47,30 +47,54 @@ var onReady = function() {
 		console.log("error: " + err)
 	});
 
-    // If a user clicks the DOM element with an id of sublayer0, 
-    // CartoDB.js will hide or show sublayers[0] depending on its state 
-    var sublayer0Shown = true;
-    $("#layer0").on('click', function() {
-        if (sublayer0Shown) {
-            sublayers[0].hide();
-        } else {
-            sublayers[0].show();
-        }
-        sublayer0Shown = !sublayer0Shown; 
-    });
+  // If a user clicks the DOM element with an id of sublayer0, 
+  // CartoDB.js will hide or show sublayers[0] depending on its state 
+  var sublayer0Shown = true;
+  $("#layer0").on('click', function() {
+      if (sublayer0Shown) {
+          sublayers[0].hide();
+      } else {
+          sublayers[0].show();
+      }
+      sublayer0Shown = !sublayer0Shown; 
+  });
 
-    var sublayer1Shown = true;
-    $("#layer1").on('click', function() {
-        if (sublayer1Shown) {
-            sublayers[1].hide();
-        } else {
-            sublayers[1].show();
-        }
-        sublayer1Shown = !sublayer1Shown; 
-    });
+  var sublayer1Shown = true;
+  $("#layer1").on('click', function() {
+      if (sublayer1Shown) {
+          sublayers[1].hide();
+      } else {
+          sublayers[1].show();
+      }
+      sublayer1Shown = !sublayer1Shown; 
+  });
 
-    d3.select("body").append("p").text("Slider!");
-    d3.select('#slider6').call(d3.slider().axis(true).min(2000).max(2100).step(5));
+  
+
+  function calcSliderMin() {
+    //SELECT MIN(deportationstag) FROM stolpersteine 
+    //first 4 positions of String
+    //thats the year
+  }
+
+  function calcSliderMax() {
+    //SELECT MAX(deportationstag) FROM stolpersteine 
+    //first 4 positions of String
+    //thats the year
+  }
+
+  function calcSliderSteps() {
+    //getSliderMax-getSliderMin
+  }
+
+  d3.select('#slider6').call(d3.slider().axis(true).min(2000).max(2100).step(5));
+
+  function getCorrespondingBlocks(slider) {
+    
+  }
+
+
+
 
     
 };
